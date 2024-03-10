@@ -52,7 +52,7 @@ section {
     border-bottom: 1px solid #ccc;
 }
 
-/* 响应式设计调整 */
+/* 响应式设计调整6 */
 @media (max-width: 768px) {
     .sidebar {
         width: 100%; /* 全宽度顶部导航栏 */
