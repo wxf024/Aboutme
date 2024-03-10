@@ -53,7 +53,7 @@ section {
 }
 
 /* 响应式设计，使侧边栏在小屏幕上自适应为顶部导航栏并横向排列 */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .sidebar {
         width: 100%;
         position: relative;
