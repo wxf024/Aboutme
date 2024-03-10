@@ -53,32 +53,38 @@ section {
 }
 
 /* 响应式设计，使侧边栏在小屏幕上自适应为顶部导航栏并横向排列 */
+/* 其他样式保持不变 */
+
+/* 响应式设计调整 */
 @media (max-width: 768px) {
     .sidebar {
-        width: 100%; /* 全宽度侧边栏 */
-        position: relative; /* 取消固定定位 */
-        display: flex; /* 应用弹性盒模型 */
-        flex-direction: row; /* 指定项目横向排列 */
-        justify-content: center; /* 项目在主轴线的对齐方式 */
-        align-items: center; /* 项目在交叉轴上如何对齐 */
-        flex-wrap: wrap; /* 允许多行排列 */
+        position: fixed; /* 在手机视图下将顶部导航栏固定 */
+        top: 0; /* 确保导航栏始终位于视口顶部 */
+        left: 0; /* 确保导航栏从视口左侧开始 */
+        width: 100%; /* 导航栏宽度充满整个视口宽度 */
+        height: auto; /* 高度自适应 */
+        z-index: 1000; /* 确保导航栏位于页面其他内容之上 */
     }
 
     .sidebar ul {
-        display: flex; /* 同样应用弹性盒模型 */
-        width: 100%; /* 确保 ul 元素充满整个 .sidebar 容器 */
-        justify-content: space-around; /* 项目之间保持均等间隔 */
-        padding: 0; /* 移除默认的内边距 */
+        display: flex;
+        flex-direction: row; /* 保持导航项横向排列 */
+        justify-content: space-around;
+        align-items: center;
+        padding: 0;
+        margin: 0; /* 移除默认的外边距 */
     }
 
     .sidebar ul li {
-        display: inline-block; /* 以内联块级元素显示列表项 */
+        display: inline-block;
     }
 
     .sidebar ul li a {
-        text-align: center; /* 链接文本居中 */
+        padding: 10px 15px; /* 调整链接的内边距以适应触摸操作 */
     }
 
     .main-content {
-        margin-top: 20px; /* 为了避免与顶部导航栏重叠，添加一些上边距 */
+        padding-top: 60px; /* 为了避免内容被固定的导航栏遮挡，添加足够的上边距 */
         margin-left: 0; /* 移除主内容区的左边距 */
+    }
+}
