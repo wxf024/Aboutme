@@ -1,0 +1,65 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif; /* 保持字体样式以提高可读性 */
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    min-height: 100%;
+}
+
+.sidebar {
+    width: 200px; /* 侧边栏宽度保持不变 */
+    background-color: #000; /* 将背景颜色设置为黑色 */
+    color: #fff; /* 文字颜色保持为白色 */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #fff; /* 链接颜色保持为白色 */
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+}
+
+.sidebar ul li a.active,
+.sidebar ul li a:hover {
+    background-color: #D10000; /* 悬停和激活状态的背景色设置为明亮的红色 */
+}
+
+.main-content {
+    margin-left: 200px; /* 主内容区的设置保持不变 */
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+section {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* 响应式设计调整保持不变 */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
