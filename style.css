@@ -52,33 +52,35 @@ section {
     border-bottom: 1px solid #ccc;
 }
 
-/* 响应式设计，使侧边栏在小屏幕上自适应为顶部导航栏并横向排列 */
+/* 响应式设计调整 */
 @media (max-width: 768px) {
     .sidebar {
-        width: 100%;
-        position: relative;
-        display: flex; /* 启用弹性盒布局 */
-        flex-wrap: wrap; /* 允许项目换行 */
-        padding: 10px 0; /* 调整内边距 */
+        width: 100%; /* 全宽度顶部导航栏 */
+        height: auto; /* 自适应内容高度 */
+        position: fixed; /* 固定在视口顶部 */
+        top: 0;
+        z-index: 1000; /* 确保导航栏位于其他内容之上 */
     }
 
     .sidebar ul {
         display: flex;
-        flex-direction: row; /* 使列表项横向排列 */
+        flex-direction: row; /* 水平排列导航项 */
+        justify-content: space-around; /* 项目之间保持均等间隔 */
         padding: 0;
-        justify-content: center; /* 项目居中对齐 */
-        width: 100%;
+        margin: 0; /* 移除默认的外边距 */
     }
 
     .sidebar ul li {
-        display: inline-block; /* 列表项内联显示 */
+        flex: 1; /* 所有导航项平均分配空间 */
     }
 
     .sidebar ul li a {
-        padding: 10px; /* 调整链接的内边距 */
+        text-align: center; /* 链接文本居中 */
+        padding: 10px 0; /* 增加垂直内边距 */
     }
 
     .main-content {
+        margin-top: 60px; /* 为顶部导航栏留出足够空间 */
         margin-left: 0; /* 移除主内容区的左边距 */
     }
 }
