@@ -52,6 +52,8 @@ section {
     border-bottom: 1px solid #ccc;
 }
 
+/* 其他样式保持不变 */
+
 /* 响应式设计调整 */
 @media (max-width: 768px) {
     .sidebar {
@@ -84,3 +86,4 @@ section {
         margin-left: 0; /* 移除主内容区的左边距 */
     }
 }
+
